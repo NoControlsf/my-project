@@ -1,4 +1,4 @@
-<style xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<style>
   .class1{
     background: #444;
     color: #eee;
@@ -43,49 +43,36 @@
 
     <p>{{ message1 }}</p>
     <button v-on:click="reverseMessage">反转字符串</button>
-
-
     <a @click="reverseMessage">反转字符串(v-on简化)</a>
-
-
     <ol>
-      <li v-for="site in sites">
-        {{ site.name }}
-      </li>
+      <li v-for="site in sites">{{ site.name }}</li>
     </ol>
-
     <ul>
       <template v-for="site in sites">
         <li>{{ site.name }}</li>
         <li>--------------</li>
       </template>
     </ul>
-
-
     <ul>
       <li v-for="value in object">
         {{ value }}
       </li>
     </ul>
-
     <ul>
       <li v-for="(value, key) in object">
         {{ key }} : {{ value }}
       </li>
     </ul>
-
     <ul>
       <li v-for="(value, key, index) in object">
         {{ index }}. {{ key }} : {{ value }}
       </li>
     </ul>
-
     <ul>
       <li v-for="n in 10">
         {{ n }}
       </li>
     </ul>
-
     <table>
       <tr>
         <th>序号</th>
@@ -109,26 +96,19 @@
       </tr>
     </table>
     总价：${{totalPrice()}}
-
-
     <button v-on:click="counter += 1">增加 1</button>
     <p>这个按钮被点击了 {{ counter }} 次。</p>
-
     <button v-on:click="say('hi')">Say hi</button>
     <button v-on:click="say('what')">Say what</button>
-
     <p>input 元素：</p>
     <input v-model="message" placeholder="编辑我……">
     <p>消息是: {{ message }}</p>
-
     <p>textarea 元素：</p>
     <textarea v-model="message2" placeholder="多行文本输入……"></textarea>
     <p style="white-space: pre">{{ message2 }}</p>
-
     <p>单个复选框：</p>
     <input type="checkbox" id="checkbox" v-model="checked">
     <label for="checkbox">{{ checked }}</label>
-
     <p>多个复选框：</p>
     <input type="checkbox" id="runoob" value="Runoob" v-model="checkedNames">
     <label for="runoob">Runoob</label>
@@ -138,23 +118,17 @@
     <label for="taobao">taobao</label>
     <br>
     <span>选择的值为: {{ checkedNames }}</span>
-
-
     <select v-model="selected" name="fruit">
       <option value="">选择一个网站</option>
       <option value="www.runoob.com">Runoob</option>
       <option value="www.google.com">Google</option>
     </select>
-
     <div id="output">
       选择的网站是: {{selected}}
     </div>
-
   </div>
 </template>
-
 <script>
-
 export default {
   name: 'HelloWorld',
   methods: {
@@ -171,7 +145,6 @@ export default {
     say: function (message) {
       alert(message)
     },
-
     reverseMessage: function () {
       this.message1 = this.message1.split('').reverse().join('')
     }
@@ -181,29 +154,23 @@ export default {
       site: "菜鸟教程",
       url: "http://www.runoob.com",
       alexa: "<a href='#'>百度</a>",
-
       use: false,
-
       ok: true,
       message: 'RUNOOB',
       id : 1,
-
       seen: true,
-
       message1: 'Runoob!',
-
+      message2: 'aaa',
       sites: [
         { name: 'Runoob' },
         { name: 'Google' },
         { name: 'Taobao' }
       ],
-
       object: {
         name: '菜鸟教程',
         url: 'http://www.runoob.com',
         slogan: '学的不仅是技术，更是梦想！'
       },
-
       Ip_Json: [{
         id: 1,
         name: 'iphone 8',
@@ -223,12 +190,9 @@ export default {
           count: 1
         }],
       counter: 0,
-
-      checked : false,
+      checked: false,
       checkedNames: [],
-
       selected: '',
-
       msg: 'Welcome to My App'
     }
   }
